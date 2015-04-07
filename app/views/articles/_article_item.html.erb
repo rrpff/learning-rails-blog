@@ -1,0 +1,5 @@
+<section>
+    <h3><%= link_to article.title, article_path(article) %></h3>
+    <span class="byline">by ~<%= article.user.username %></span>
+    <p><%= article.body.split('\n')[0] %></p>
+</section>

@@ -1,0 +1,11 @@
+<% content_for :title do %>
+    <%= @article.title %> by ~<%= @article.user.username %>
+<% end %>
+
+<%= render @article %>
+
+<% content_for :footer do %>
+    <% if current_user && @article.user.id === current_user.id %>
+        <%= link_to 'Edit this article', edit_article_path(@article) %>
+    <% end %>
+<% end %>

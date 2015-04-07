@@ -1,0 +1,15 @@
+<article>
+
+    <h1>
+        <%= link_to @article.title, article_path(@article) %>
+    </h1>
+
+    <span class="byline">
+        by <%= link_to @article.user.username, user_path(@article.user.username) %>
+    </span>
+
+    <section>
+        <%= @article.body %>
+    </section>
+
+</article>

@@ -1,0 +1,11 @@
+<% content_for :title do %>
+    Articles
+<% end %>
+
+<h1>Articles</h1>
+
+<%= link_to 'Write an article', new_article_path %>
+
+<% for article in @articles %>
+    <%= render partial: 'article_item', locals: { article: article }  %>
+<% end %>

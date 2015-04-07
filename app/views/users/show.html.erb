@@ -1,0 +1,11 @@
+<% content_for :title do %>
+    ~<%= @user.username %>
+<% end %>
+
+<h1>~<%= @user.username %></h1>
+<h3>Has written <%= pluralize(@user.articles.length, 'article') %></h3>
+<% if @user.articles.length > 0 %>
+    <% for article in @user.articles %>
+        <%= render partial: 'articles/article_item', locals: { article: article } %>
+    <% end %>
+<% end %>
